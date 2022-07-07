@@ -1,12 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect} from "react";
+import styles from "./submitForm.module.css";
 
-function Form(){
+const Form = () => {
     
     const [blog,setBlog] = useState({
         name: "",
         title:"",
-        blog:"",
+        blog:""
     });
 
     const handleChange = (e) => {
@@ -17,8 +18,17 @@ function Form(){
     }
 
     const handleSubmit = (e) => {
+        
         e.preventDefault();
-        console.log(blog);
+            fetch("http://localhost:3000/", {
+                method: "POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(blog)
+            }).then( (response) => {
+                return response.json();
+            });
     }
 
     return (
