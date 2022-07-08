@@ -32,11 +32,11 @@ const Form = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Name" onChange={handleChange} name="name" value={blog.name}/>
+        <div className={styles.outer}>
+            <form onSubmit={handleSubmit} className={styles.submitForm}>
                 <input type="text" placeholder="Title" onChange={handleChange} name="title" value={blog.title}/>
                 <textarea placeholder="Start Writing" onChange={handleChange} name="blog" value={blog.blog} />
+                <input type="text" placeholder="Name" onChange={handleChange} name="name" value={blog.name} className={styles.name}/>
                 <button type="submit">Submit</button>
             </form>
         </div>
