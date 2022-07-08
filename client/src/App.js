@@ -4,19 +4,19 @@ import Nav from "./components/nav/nav";
 import Home from "./components/home/home";
 import { useState } from "react";
 
-export default function App() {
+function App() {
 
-  const  [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(false);
 
   return (
     <Router>
-      <Nav isAuth = {setAuth}/>
-    {/* <Form /> */}
+      <Nav sa = {setAuth} a={isAuth}/>
     <Routes>
       <Route path="/" element={<Home isAuth={isAuth}/>}/>
-      <Route path="/post" element={<Form />}/>
+      <Route path="/post" element={<Form/>}/>
     </Routes>
-
     </Router>
   );
 }
+
+export default App;
