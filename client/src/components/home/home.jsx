@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import Card from "../card/card"
 import styles from "./home.module.css"
+import Footer from "../footer/footer";
 
 const Home = () => {
      
@@ -23,6 +24,7 @@ const Home = () => {
             {posts.map((post) => {
              return <Card key={post.id} title={post.title} blog={post.blog} name={post.author}/>
             })}
+            <Footer/>
         </div>
     );
 }

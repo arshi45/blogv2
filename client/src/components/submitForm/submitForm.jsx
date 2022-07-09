@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./submitForm.module.css";
 import {db, auth} from "../../db";
 import { addDoc, collection } from "firebase/firestore";
+import Footer from "../footer/footer";
 
 const Form = () => {
 
@@ -60,6 +61,7 @@ const Form = () => {
                 <textarea placeholder="Start Writing" onChange={handleChange} name="blog" value={blog.blog} rows="10"/>
                 <button type="submit" onClick={handleSubmit} >Submit</button>
             </form>
+            <Footer/>
         </div>
     );
 }
