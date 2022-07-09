@@ -5,6 +5,7 @@ import styles from "./submitForm.module.css";
 import {db, auth} from "../../db";
 import { addDoc, collection } from "firebase/firestore";
 import Footer from "../footer/footer";
+import MyPost from "../myPosts/myPosts";
 
 const Form = () => {
 
@@ -56,6 +57,7 @@ const Form = () => {
 
     return (
         <div className={styles.outer}>
+            <MyPost />
             <form  className={styles.submitForm}  >
                 <input type="text" placeholder="Title" onChange={handleChange} name="title" value={blog.title}/>
                 <textarea placeholder="Start Writing" onChange={handleChange} name="blog" value={blog.blog} rows="10"/>

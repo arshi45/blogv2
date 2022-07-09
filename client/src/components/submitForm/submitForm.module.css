@@ -28,7 +28,7 @@ textarea{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     height: 90vh;
     background-color:white;
 }
