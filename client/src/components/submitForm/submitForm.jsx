@@ -1,11 +1,14 @@
 import React from "react";
 import { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./submitForm.module.css";
+import {db, auth} from "../../db";
+import { addDoc, collection } from "firebase/firestore";
 
-const Form = (props) => {
-    
+const Form = () => {
+
+    const navigate = useNavigate();
     const [blog,setBlog] = useState({
-        name: "",
         title:"",
         blog:""
     });
@@ -16,6 +19,25 @@ const Form = (props) => {
             [e.target.name]: e.target.value
         });
     }
+    
+    const collectionRef = collection(db, "blogs");
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await addDoc(collectionRef, 
+            {...blog,
+                author:{
+                    name: auth.currentUser.displayName,
+                    id :auth.currentUser.uid }
+            });
+            navigate("/");
+    }
+
+    useEffect(() => {
+        if(!localStorage.getItem("a")){
+            navigate("/");
+        }
+    }, [])
 
     // const handleSubmit = (e) => {
         
@@ -33,11 +55,10 @@ const Form = (props) => {
 
     return (
         <div className={styles.outer}>
-            <form  className={styles.submitForm}>
+            <form  className={styles.submitForm}  >
                 <input type="text" placeholder="Title" onChange={handleChange} name="title" value={blog.title}/>
-                <textarea placeholder="Start Writing" onChange={handleChange} name="blog" value={blog.blog} />
-                <input type="text" placeholder="Name" onChange={handleChange} name="name" value={blog.name} className={styles.name}/>
-                <button type="submit">Submit</button>
+                <textarea placeholder="Start Writing" onChange={handleChange} name="blog" value={blog.blog} rows="10"/>
+                <button type="submit" onClick={handleSubmit} >Submit</button>
             </form>
         </div>
     );

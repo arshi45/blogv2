@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import styles from "./nav.module.css";
 import {auth, provider} from "../../db";
 import { signInWithPopup, signOut } from "firebase/auth";
@@ -27,11 +27,11 @@ const Nav = (props) =>{
     }
 
     return (
-        <div className="nav">
-            <Link to="/">Home</Link>
+        <div className={styles.nav}>
+            <a href="/" className={styles.home}>Home</a>
             {localStorage.getItem("a")?null:<button onClick={login}>Login</button>}
-            {localStorage.getItem("a") && <a href="/post">Post</a>}
-            {localStorage.getItem("a") && <button onClick={out}>Log Out</button>}
+            {localStorage.getItem("a") && <a href="/post" className={styles.post}>Post</a>}
+            {localStorage.getItem("a") && <button className={styles.logout} onClick={out} >Log Out</button>}
         </div>
     );
 }

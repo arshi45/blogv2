@@ -1,12 +1,14 @@
 import React from "react";
+import styles from "./card.module.css";
 
-
-export default Card = (props) =>{
+const Card = (props) =>{
     return(
-        <div>
-            <h1>{props.title}</h1>
-            <p>{props.blog}</p>
-            <p>{props.name}</p>
+        <div className={styles.Card}>
+            <h1 className={styles.title}>{props.title}</h1>
+            <p className={styles.post}>{props.blog}</p>
+            {/* <p className={styles.name}>{props.name.id}</p> */}
         </div>
-    )
+    );
 }
+
+export default Card;
