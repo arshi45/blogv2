@@ -26,7 +26,8 @@ const MyPost = (props) => {
                 const getMyPost = async () =>{
                 const myData = await getDocs(collectionRef);
                 setMyPosts(myData.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
-        }
+                }
+                getMyPost();
         } 
         }); 
     },[]);

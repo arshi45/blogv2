@@ -1,24 +1,28 @@
 .Card{
     display: block;
     box-sizing: border-box;
-    width: 50vw;
+    width: 44vw;
     display: flex;
     flex-direction: column;
     justify-content:baseline;
     font-size: 1.2rem;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0,0, .1);
-    margin:32px;
+    box-shadow: 0px 0px 10px 5px rgba(158,219,251,.2);
     padding:24px;
+    margin-bottom: 32px;
     border-radius: 8px;
 }
 
 .title{
+    margin: unset;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
     margin: unset;
 }
 
 .name{
     margin: unset;
     color: grey;
+    align-self: flex-end;
 }
 
 .top{
@@ -30,5 +34,11 @@
 .top button{
     background-color: transparent;
     padding: unset;
+}
+
+.post{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 400;
+    margin: 8px 0;
 }
 

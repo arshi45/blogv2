@@ -21,9 +21,14 @@ const Home = () => {
 
     return (
         <div className={styles.homePage}>
-            {posts.map((post) => {
-             return <Card key={post.id} title={post.title} blog={post.blog} name={post.author}/>
-            })}
+            <div className={styles.order}>
+                <div className={styles.sectionOne}>
+                    {posts.map((post) => {
+                     return <Card key={post.id} title={post.title} blog={post.blog} name={post.author}/>
+                    })}
+                </div>
+                <img src="./home.png"/>
+            </div>
             <Footer/>
         </div>
     );

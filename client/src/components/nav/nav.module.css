@@ -4,20 +4,25 @@ a {
     margin: 12px;
     color: white ;
     box-sizing: border-box;
-    background-color: #CCD6A6;
+    background-color: #9ef9cd;
     padding: 8px;
     font-weight: 600;
+    font-family: "Montserrat",sans-serif;
     border-radius: 4px;
 }
 
 button{
-    background-color: #90C8AC;
+    background-color:#9edbfb;
     color: white;
-    border: none;
-    border-radius: 4px;
+    border-width:1px ;
+    border: solid;
+    border-color: #9ef9cd;
+    border-radius: 8px;
     font-size: 1.2rem;
     padding: 8px;
     margin: 12px;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -26,5 +31,7 @@ button{
     flex-direction: row;
     padding: 10px 20px ;
     align-items: center;
+    position: fixed;
+    width: 100vw;
     background-color:white;
 }

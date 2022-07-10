@@ -1,5 +1,17 @@
 .homePage{
     display: flex;
     flex-direction: column;
+    padding: 8vw 32px 32px 32px;
+}
+
+.order{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    position: fixed;
+    left: 55vw;
+    width: 40vw;
 }
 
