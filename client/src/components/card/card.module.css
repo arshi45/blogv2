@@ -42,3 +42,11 @@
     margin: 8px 0;
 }
 
+.blogClick{
+    background-color: transparent;
+    color:#9edbfb;
+    padding: unset;
+    border: none;
+    margin: unset;
+}
+

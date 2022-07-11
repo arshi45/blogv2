@@ -10,6 +10,7 @@ import MyPost from "../myPosts/myPosts";
 const Form = () => {
 
     const navigate = useNavigate();
+
     const [blog,setBlog] = useState({
         title:"",
         blog:""
@@ -41,6 +42,7 @@ const Form = () => {
         }
     }, [])
 
+
     // const handleSubmit = (e) => {
         
     //     e.preventDefault();
@@ -63,7 +65,7 @@ const Form = () => {
                 <textarea placeholder="Start Writing" onChange={handleChange} name="blog" value={blog.blog} rows="10"/>
                 <button type="submit" onClick={handleSubmit} >Submit</button>
             </form>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

@@ -29,7 +29,7 @@ const Nav = (props) =>{
     return (
         <div className={styles.nav}>
             <a href="/" className={styles.home}>Home</a>
-            {localStorage.getItem("a")?null:<button onClick={login}>Login</button>}
+            {localStorage.getItem("a")?null:<button onClick={login}>Login/SignUp</button>}
             {localStorage.getItem("a") && <a href="/post" className={styles.post}>Post</a>}
             {localStorage.getItem("a") && <button className={styles.logout} onClick={out} >Log Out</button>}
         </div>
