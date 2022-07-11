@@ -1,20 +1,18 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../db";
 import styles from "./card.module.css";
 
 const Card = (props) =>{
-    const navigate = useNavigate();
+
     const initial = props.blog.length;
     const [word,setWord] = useState(props.blog.length);
 
     const deleteItem = async (e) =>{
         const postDoc = doc(db, "blogs",e.target.value)
         await deleteDoc(postDoc);
-        navigate("/");
+        window.location.pathname = "/post";
     }
 
     const handleClick = () => {
